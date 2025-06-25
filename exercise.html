@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Практика — Основи веб-розробки</title>
+    <link rel="stylesheet" href="styles/custom.css">
+    <link rel="stylesheet" href="styles/intro.css">
+</head>
+<body>
+<img src="resources/images/teacher_black.png" alt="teacher" class="decor-teacher">
+<img src="resources/images/child.png" alt="children" class="decor-children">
+<div class="wrap">
+    <!-- Шапка сторінки -->
+
+
+    <!-- Вітальна модалка для вправ -->
+    <div id="exerciseOverlay" class="overlay hidden">
+        <div class="modal">
+            <button id="exerciseCloseBtn" class="close-btn">&times;</button>
+            <div class="modal-content welcome-modal-content">
+                <img src="resources/images/teacher2.png"
+                     alt="Вчителька"
+                     class="welcome-teacher-img">
+                <h2>Готові до практики?</h2>
+                <p style="font-weight: bold; margin-bottom: 1rem;">
+                    ✨ Попереду — <strong>7 інтерактивних завдань</strong>, у яких ти не просто обираєш правильну відповідь, а й <strong>бачиш, як змінюється елемент на сторінці</strong> у реальному часі.
+                </p>
+                <p style="font-weight: bold; margin-bottom: 1rem;">
+                    🔍 Кожне питання демонструє вплив певної CSS-властивості: зміна кольору, розміру, прозорості, розташування або навіть анімації. Це не просто тести — це візуальна магія стилів!
+                </p>
+                <p style="font-weight: bold; margin-bottom: 1rem;">
+                    🧠 Після цього на тебе чекають <strong>10 теоретичних запитань</strong>, щоб перевірити, як добре ти засвоїв основи HTML, CSS, адаптивності, анімацій та роботи з медіа.
+                </p>
+                <p style="font-weight: bold;">
+                    Все, що потрібно — трохи уваги та бажання вчитись. Успіхів тобі у цьому стилевому квесті! 👨‍💻👩‍💻
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Основний контент із вправами -->
+    <!-- …попередній код… -->
+
+    <main class="main">
+        <div class="interactive-example">
+            <!-- Контейнер з кодом -->
+            <div class="code-container">
+<pre><code id="code-block">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;style&gt;
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      background-color: #eef;
+    }
+    .ground {
+      width: 100%;
+      height: 10px;
+      background: #444;
+    }
+    .cube {
+      width: 50px;
+      height: 50px;
+      background: red;
+      position: absolute;
+      bottom: 10px;
+      left: 20px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="ground"&gt;&lt;/div&gt;
+  &lt;div class="cube"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+            </div>
+
+            <!-- Контейнер-iframe с реальным выводом -->
+            <iframe id="preview-frame" class="output-container"
+
+                    sandbox="allow-scripts"
+                    srcdoc='
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      background-color: #eef;
+    }
+    .ground {
+      width: 100%;
+      height: 10px;
+      background: #444;
+    }
+    .cube {
+      width: 50px;
+      height: 50px;
+      background: red;
+      position: absolute;
+      bottom: 10px;
+      left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="ground"></div>
+  <div class="cube"></div>
+</body>
+</html>
+'></iframe >
+            <div id="quiz-block" class="quiz-block">
+                <div id="quiz-question" class="quiz-question">Тут буде ваше завдання</div>
+                <div id="quiz-options" class="quiz-options"></div>
+                <div id="quiz-progress" class="quiz-progress"></div>
+                <div id="teacher-feedback" class="teacher-feedback hidden">
+                    <img src="resources/images/teacher4.png" alt="Вчителька" class="teacher-img">
+                    <div id="teacher-text" class="teacher-text">Пояснення тут...</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="completionModal" class="overlay hidden">
+        <div class="modal">
+            <div class="modal-content" style="text-align: left; padding: 1.5rem; max-width: 800px;overflow: hidden">
+                <h2>📚 Підведемо підсумки: Що ми сьогодні вивчили</h2>
+                <p>Під час цього тренування ти пройшов два етапи:
+                    <strong>інтерактивну практику</strong> і <strong>теоретичну перевірку знань</strong>.
+                    Разом — 17 завдань, що охопили як базові CSS-властивості, так і ключові поняття веб-розробки.
+                </p>
+
+                <p>Ти не просто відповідав на питання — кожна дія змінювала вигляд елемента на сторінці. Ти застосовував:</p>
+                <ul>
+                    <li><strong>background</strong> — зміна кольору фону;</li>
+                    <li><strong>bottom</strong>, <strong>margin-left</strong> — позиціювання і зсув елементів;</li>
+                    <li><strong>border-radius</strong> — округлення форм;</li>
+                    <li><strong>opacity</strong> — прозорість;</li>
+                    <li><strong>border</strong> — рамка навколо об'єктів;</li>
+                    <li><strong>animation</strong> — анімація пульсації;</li>
+                </ul>
+                <p>Це основа стилізації, яку ти вже відчув на практиці.</p>
+
+                <p>Ти також перевірив свої знання у ключових сферах:</p>
+                <ul>
+                    <li><strong>HTML</strong>: структура, семантичні теги;</li>
+                    <li><strong>CSS</strong>: селектори, box-model, media-запити;</li>
+                    <li><strong>JavaScript</strong>: DOM, обробники подій;</li>
+                    <li><strong>Адаптивність</strong>: гнучкі макети, viewport;</li>
+                    <li><strong>Медіа та анімації</strong>: відео, transition, @keyframes.</li>
+                </ul>
+
+                <h3>🌟 Висновок</h3>
+                <p>Це був лише <strong>перший крок</strong> на шляху до веб-розробки. Ти вже опанував інструменти, які використовуються щодня у справжніх проєктах.</p>
+                <p><strong>Далі на тебе чекають складніші теми</strong>: адаптивна верстка, анімації з бібліотеками, інтерактивність з JavaScript, робота з API, компонентна архітектура та багато іншого.</p>
+                <p><strong>Продовжуй тренуватись — і вже зовсім скоро ти створиш власний сучасний вебсайт. У тебе все вийде!</strong> 🚀</p>
+
+                <button onclick="window.location.href='index.html'">Закрити</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<script src="scripts/exercise.js" defer></script>
+</body>
+</html>

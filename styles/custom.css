@@ -1,0 +1,312 @@
+/* styles/custom.css */
+
+/* 1. Сброс и базовая типографика */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #000000;
+    color: #333;
+}
+
+/* 2. Обёртка и хедер */
+.wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    background-color: gray;
+    box-shadow: 0 6px 7px rgba(0, 0, 0, 0.1);
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.h_text_1,
+.h_text_2 {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* 3. Основной контент */
+.main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 3vh auto 2rem;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Модуль (раздел) */
+.module {
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Плавный переход для трансформации и тени */
+.module {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Эффект при наведении: масштаб и усиленная тень */
+.module:hover {
+    transform: scale(1.03); /* чуть увеличиваем блок */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
+/* Оверлей поверх всего экрана + блюр фона */
+.overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+/* Скрытый по умолчанию */
+.hidden {
+    display: none;
+}
+
+/* Модальное окно */
+.modal {
+    position: relative;
+    background: #fff;
+    max-width: 90%;
+    max-height: 90%;
+    padding: 2rem;
+    border-radius: 8px;
+    overflow: auto;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Кнопка закрытия */
+.close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* Контент внутри модалки */
+.modal-content {
+    margin-top: 1.5rem;
+}
+
+/* Не даём блюр-оверлею прокручиваться */
+body.modal-open {
+    overflow: hidden;
+}
+/* 1. Убедимся, что .module позиционируется относительно */
+.module {
+    position: relative;
+    /* ваши остальные стили… */
+}
+
+.checkmark {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
+    display: none;            /* скрываем по умолчанию */
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* 3. Когда модуль имеет класс .read — галочка видна */
+.module.read .checkmark {
+    display: flex;
+}
+/* Короткий опис під хедером */
+.short-description {
+    width: 80%;
+    max-width: 800px;            /* обмежуємо ширину контейнера */
+    margin: 12vh auto 2rem;      /* відступ зверху = висота шапки + трохи, по центру */
+    padding: 1rem 1.5rem;
+    background-color: #fff;      /* або інший світлий фон */
+    color: #333;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+/* === Welcome Modal Styles === */
+#welcomeOverlay .modal {
+    max-width: 500px;
+}
+
+.welcome-teacher-img {
+    display: block;
+    margin: 0 auto 1rem;
+    width: clamp(100px, 40%, 200px);
+    height: auto;
+}
+
+/* Текст і заголовок */
+.welcome-modal-content h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.welcome-modal-content p {
+    line-height: 1.5;
+    text-align: center;
+}
+/* === Контейнер для кнопки на кінці сторінки === */
+.next-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: clamp(1rem, 3vh, 2rem) 0;
+}
+
+/* === Стилі кнопки «Далі» на головній === */
+.main-next-btn {
+    padding: clamp(0.75rem, 2vh, 1.25rem) clamp(1.5rem, 5vw, 2rem);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Hover і active стани */
+.main-next-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+.main-next-btn:active {
+    transform: translateY(0);
+}
+
+/* На вузьких екранах трохи зменшуємо відступ зверху */
+@media (max-width: 600px) {
+    .short-description {
+        margin-top: 14vh;
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* 4. Адаптивная раскладка */
+@media (min-width: 768px) {
+    .main {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .module {
+        flex: 0 1 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+    }
+    .short-description {
+        margin-top: 12vh;
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    .module {
+        flex: 0 1 calc(33.333% - 1rem);
+        max-width: calc(33.333% - 1rem);
+    }
+    .short-description {
+        margin-top: 10vh;
+        /* Делать максимальную ширину таким же, как у main */
+        max-width: 1200px;
+    }
+}
+/* чтобы абсолютное позиционирование считалось от .wrap */
+.wrap {
+    position: relative;
+}
+/* прячем картинки на ширине <=1024px */
+@media (max-width: 1024px) {
+    .decor-img {
+        display: none;
+    }
+}
+
+
+/* общие стили для декоративных картинок */
+.decor-img {
+    position: absolute;
+    /* адаптивный размер: минимум 80px, максимум 250px, оптимум 15% экрана */
+    width: clamp(80px, 15vw, 250px);
+    height: auto;
+    pointer-events: none;    /* чтобы мышью “проскальзывало” по мимо картинок */
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+
+/* левая картинка внизу */
+.decor-left {
+    bottom: 1rem;
+    left: 1rem;
+}
+
+/* правая картинка по вертикали по центру */
+.decor-right {
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+}
+
+/* (опционально) на очень узких экранах прячем картинки */
+@media (max-width: 480px) {
+    .decor-img {
+        display: none;
+    }
+}
+
+/* 5. Гибкость для медиа */
+img,
+video,
+iframe {
+    max-width: 100%;
+    height: auto;
+}

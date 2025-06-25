@@ -1,0 +1,297 @@
+/* === styles/intro.css (обновлено) === */
+
+/* === Блок-интро для сторінки вправ === */
+.page-intro {
+    width: clamp(280px, 90%, 800px);
+    margin: clamp(12vh, 10vw, 15vh) auto 2rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.page-intro__title {
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-weight: bold;
+    color: #222;
+}
+
+.page-intro__subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: #555;
+}
+
+/* === Отключаем выделение текста и перетягивание в картинках у модалках === */
+#welcomeOverlay .modal-content,
+#exerciseOverlay .modal-content,
+.welcome-teacher-img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.welcome-teacher-img {
+    -webkit-user-drag: none;
+}
+
+/* === Интерактивный пример: центровка и увеличение === */
+.interactive-example {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin:  auto 2rem;           /* центрируем блок */
+    max-width: 1200px;              /* ограничиваем ширину */
+    width: 90%;
+    gap: 2rem;                      /* увеличенный промежуток */
+    padding: 3rem 2rem;             /* большие отступы */
+    background-color: #fff;         /* белый фон */
+    border-radius: 6px;             /* скругленные углы */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Общие стили для контейнеров */
+.code-container,
+.output-container {
+    flex: 1 1 clamp(300px, 45%, 600px);
+    border-radius: 4px;
+    padding: 1.5rem;
+    font-size: 1rem;                /* больший размер шрифта */
+}
+
+/* Стилевой блок для кода */
+.code-container {
+    background: #272822;
+    color: #f8f8f2;
+    font-family: Consolas, Menlo, monospace;
+}
+
+.code-container pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 1rem;
+}
+
+/* Стилевой блок для iframe-вывода */
+.output-container {
+    border: 1px solid #ccc;
+    height: clamp(250px, 40vh, 500px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.quiz-block {
+    margin: 2rem auto;
+    padding: 1.5rem 1rem;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    text-align: center;
+    width: clamp(280px, 90%, 800px);
+}
+
+.quiz-question {
+    margin: 0;
+    color: #333;
+}
+.quiz-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.quiz-options button {
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    min-width: 120px;
+}
+
+.quiz-options button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.decor-teacher {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    max-height: 90vh;
+    opacity: 0.4;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.decor-children {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    max-width: 25vw;
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Убедимся, что основной контент над изображениями */
+.wrap,
+.quiz-block,
+.interactive-example {
+    position: relative;
+    z-index: 1;
+}
+.decor-teacher {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    max-height: 90vh;
+    opacity: 0.4;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.decor-children {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    max-width: 25vw;
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.wrap,
+.quiz-block,
+.interactive-example {
+    position: relative;
+    z-index: 1;
+}
+.quiz-progress {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #666;
+}
+.teacher-feedback {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #fdfdfd;
+    border: 1px solid #ddd;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    max-width: 90%;
+}
+.custom-modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.custom-modal-content {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    max-width: 90%;
+    width: 500px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.custom-modal-content h2 {
+    margin-top: 0;
+    font-size: 1.6rem;
+}
+
+.custom-modal-content ul {
+    margin: 1rem 0;
+}
+
+.custom-modal-content button {
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.custom-modal-content button:hover {
+    background-color: #43a047;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.teacher-feedback.hidden {
+    display: none;
+}
+
+.teacher-img {
+    height: 60px;
+    flex-shrink: 0;
+}
+
+.teacher-text {
+    font-size: 1rem;
+    color: #444;
+}
+button.correct {
+    border-color: green;
+    background-color: #eaffea;
+}
+
+button.incorrect {
+    border-color: red;
+    background-color: #ffeaea;
+}
+
+/* === Адаптив === */
+@media (max-width: 768px) {
+    .interactive-example {
+        flex-direction: column;
+        padding: 2rem 1rem;
+    }
+    .output-container {
+        height: clamp(200px, 30vh, 350px);
+    }
+}
+
+@media (min-width: 768px) {
+    .page-intro {
+        margin-top: 10vh;
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .page-intro {
+        margin-top: 8vh;
+        max-width: 1200px;
+    }
+}

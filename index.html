@@ -1,10 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Односторінковий курс з веб-розробки</title>
+  <link rel="stylesheet" href="styles/custom.css">
 </head>
 <body>
-$END$
+
+<div class="wrap">
+  <!-- Декоративные изображения -->
+
+
+  <header class="header">
+    <div class="h_text_1">Основи веб-розробки</div>
+    <div class="h_text_2">HTML, CSS, JavaScript, адаптивність, анімації, медіа</div>
+  </header>
+  <div class="short-description">
+    Короткий опис: </div>
+  <main class="main">
+    <main class="main">
+      <!-- Розділ 1: Вступ до HTML -->
+      <section id="html-structure" class="module">
+        <h2>1. Вступ до HTML</h2>
+        <p>Коротко про те, що таке HTML, структура документа, основні теги.</p>
+        <!-- Сюди пізніше вставите приклади коду, списки, зображення -->
+      </section>
+
+      <section id="css-basics" class="module">
+        <h2>2. Основи CSS</h2>
+        <p>Селектори, властивості, Box Model, підключення стилів.</p>
+      </section>
+
+      <!-- Розділ 3: JavaScript – вступ до мови -->
+      <section id="js-intro" class="module">
+        <h2>3. Основи JavaScript</h2>
+        <p>Як підключити скрипт, змінні, функції, обробники подій.</p>
+      </section>
+
+      <!-- Розділ 4: Адаптивний дизайн -->
+      <section id="adaptive-design" class="module">
+        <h2>4. Адаптивний веб-дизайн</h2>
+        <p>Медіа-запити, flex-контейнери, grid, відносні одиниці.</p>
+      </section>
+
+      <!-- Розділ 5: Анімації та спецефекти -->
+      <section id="animations" class="module">
+        <h2>5. Анімації та спецефекти</h2>
+        <p>CSS transitions, @keyframes, проста анімація через JS або Canvas.</p>
+      </section>
+
+      <!-- Розділ 6: Медіа (аудіо/відео) -->
+      <section id="media" class="module">
+        <h2>6. Робота з аудіо та відео</h2>
+        <p>Теги &lt;audio&gt;/&lt;video&gt;, атрибути controls, керування відтворенням через JS.</p>
+      </section>
+    </main>
+    <img src="resources/images/pc.png"
+         alt="Комп’ютер"
+         class="decor-img decor-left">
+    <img src="resources/images/class.png"
+         alt="Учень"
+         class="decor-img decor-right">
+
+  </main>
+  <div class="next-container">
+    <button id="nextBtn" class="main-next-btn">Далі</button>
+  </div>
+</div>
+
+<!-- Overlay + Модальне вікно -->
+<div id="overlay" class="overlay hidden">
+  <div class="modal">
+    <button id="closeBtn" class="close-btn">&times;</button>
+    <div class="modal-content"></div>
+  </div>
+</div>
+<!-- Welcome Overlay -->
+<div id="welcomeOverlay" class="overlay hidden">
+  <div class="modal">
+    <button id="welcomeCloseBtn" class="close-btn">&times;</button>
+    <div class="modal-content welcome-modal-content">
+      <img src="resources/images/teacher3.png"
+           alt="Вчителька"
+           class="welcome-teacher-img">
+      <h2>Ласкаво просимо!</h2>
+      <p style="font-weight: bold">
+        Цей курс ознайомить вас із основами веб-розробки:
+        створенням структури сторінок за допомогою HTML,
+        стилізацією через CSS, інтерактивністю на JavaScript,
+        адаптивною вёрсткою, базовими анімаціями та роботою з медіа.
+        Після теорії ми спробуємо закріпити знання на практиці.
+
+        ⚠️ Зверніть увагу: це лише чернетка навчального матеріалу.
+        Надалі на вас чекатиме невеличка перевірка щодо використання стилів.
+
+        Також рекомендуємо проходити документацію в кінці кожного блоку — вона допоможе краще зрозуміти матеріал і підготує до практичних завдань.
+
+        Бажаємо успіхів
+      </p>
+      <p style="font-weight: bold">
+        А тепер натисніть на один із блоків, якщо хочете дізнатись щось нове,
+        або переходьте далі до практики!
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="scripts/interactive.js"></script>
+</body>
+</html>
+
+<script src="scripts/interactive.js"></script>
 </body>
 </html>
