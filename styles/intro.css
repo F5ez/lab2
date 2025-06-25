@@ -246,7 +246,7 @@ button.incorrect {
     }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 420px) {
     .interactive-example {
         display: flex;
         flex-direction: column;
