@@ -252,21 +252,20 @@ button.incorrect {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        /* Замість 100vw - 100% ширини контейнера */
-        width: 100%;
+        width: 100%;       /* займати всю ширину */
         max-width: 100%;
         min-height: 100vh;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding: 1rem 0.5rem;  /* зменшений паддінг */
         box-sizing: border-box;
-        margin: 0 auto; /* Центрування, якщо потрібно */
+        margin: 0 auto;
     }
 
     .code-container,
     .output-container {
-        width: 100%;
+        flex: 1 1 auto;   /* прибрати мінімальну ширину */
+        width: 100%;      /* ширина на всю доступну */
         max-width: 100%;
-        margin: 0;
+        margin: 0 0 1rem 0; /* відступ знизу для відстані між блоками */
         padding: 1rem;
         box-sizing: border-box;
     }
@@ -283,6 +282,7 @@ button.incorrect {
         min-width: unset;
     }
 }
+
 
 
 @media (min-width: 768px) {
